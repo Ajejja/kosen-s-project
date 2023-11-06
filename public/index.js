@@ -1,9 +1,9 @@
 window.onload = async () => {
   // ログインする必要があるならログイン画面へ
-  const did = localStorage.getItem('did')
+  const did = localStorage.getItem("did");
   if (!did) {
-    window.location.href = '/login.html'
-    return
+    window.location.href = "/login.html";
+    return;
   }
 
   /**
@@ -28,19 +28,23 @@ window.onload = async () => {
         parentDiv.appendChild(dreamDiv);
 
         // dream-title1, dream-title2, ... のようなdiv要素をdreamDivの子要素として作成
+        const dreamUserDiv = document.createElement("div");
+        dreamUserDiv.textContent = `USERNAME: ${data[i].name}`; // User's name prefixed
+        dreamDiv.appendChild(dreamUserDiv); // Append username div before title and tag
+
         const dreamTitleDiv = document.createElement("div");
         dreamTitleDiv.setAttribute("id", `dream-title${i}`);
-        dreamTitleDiv.textContent = data[i].title; // タイトル名を挿入
+        dreamTitleDiv.textContent = data[i].title; // Title
         dreamDiv.appendChild(dreamTitleDiv);
 
         const dreamTagDiv = document.createElement("div");
         dreamTagDiv.setAttribute("id", `dream-tag-detail${i}`);
         // 「ファンタジー, 恋愛, コメディー, その他」の文字を「#ファンタジー #恋愛 #コメディー その他」に変換
         const tagsString = data[i].tag
-          .split(',')
-          .map(tag => tag.trim())
-          .map(tag => tag === 'その他' ? tag : `#${tag}`)
-          .join(' ');
+          .split(",")
+          .map((tag) => tag.trim())
+          .map((tag) => (tag === "その他" ? tag : `#${tag}`))
+          .join(" ");
         dreamTagDiv.textContent = tagsString; // Tagを挿入
         dreamDiv.appendChild(dreamTagDiv);
 

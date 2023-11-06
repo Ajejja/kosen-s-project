@@ -38,14 +38,17 @@ Users can log out or switch accounts with ease, further promoting the privacy-fo
  
 
 # How to Use
-Register/Login: Download your DID file and use it to register or log in to DreamShare.
-Explore: Scroll through the home page to see the latest dreams from other users.
-Post a Dream: Click on the 'Post Dream' button and fill in the details of your dream along with the appropriate tag.
-Comment: Select a dream to view more details and leave a comment for the dreamer.
-Profile Management: Access your profile to view all your previous dream posts.
-Logout: When you're ready to leave, simply press the logout button to end your session.
+
+1. Register/Login: Download your DID file and use it to register or log in to DreamShare.
+2. Explore: Scroll through the home page to see the latest dreams from other users.
+3. Post a Dream: Click on the 'Post Dream' button and fill in the details of your dream along with the appropriate tag.
+4. Comment: Select a dream to view more details and leave a comment for the dreamer.
+5. Profile Management: Access your profile to view all your previous dream posts.
+6. Logout: When you're ready to leave, simply press the logout button to end your session.
+
 # Technical Stack
-Frontend: css/html
-Backend: javaScript/deno
-Authentication: DID (Decentralized Identifier)
-Database: MYSQL
+
+1. Frontend: CSS/HTML
+2. Backend: JavaScript/Deno
+3. Authentication: DID (Decentralized Identifier)
+4. Database: MYSQL

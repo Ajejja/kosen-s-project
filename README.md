@@ -36,19 +36,18 @@ Users can log out or switch accounts with ease, further promoting the privacy-fo
 
 ![image](https://github.com/Ajejja/kosen-s-project/assets/122018379/429843fc-193d-4f3f-b27c-c69810436074) ![image](https://github.com/Ajejja/kosen-s-project/assets/122018379/c3d9ad49-8e85-40a7-8e78-c2f7ad8debaf)
  
-
 # How to Use
 
-1. Register/Login: Download your DID file and use it to register or log in to DreamShare.
-2. Explore: Scroll through the home page to see the latest dreams from other users.
-3. Post a Dream: Click on the 'Post Dream' button and fill in the details of your dream along with the appropriate tag.
-4. Comment: Select a dream to view more details and leave a comment for the dreamer.
-5. Profile Management: Access your profile to view all your previous dream posts.
-6. Logout: When you're ready to leave, simply press the logout button to end your session.
+- Register/Login: Download your DID file and use it to register or log in to DreamShare.
+- Explore: Scroll through the home page to see the latest dreams from other users.
+- Post a Dream: Click on the 'Post Dream' button and fill in the details of your dream along with the appropriate tag.
+- Comment: Select a dream to view more details and leave a comment for the dreamer.
+- Profile Management: Access your profile to view all your previous dream posts.
+- Logout: When you're ready to leave, simply press the logout button to end your session.
 
 # Technical Stack
 
-1. Frontend: CSS/HTML
-2. Backend: JavaScript/Deno
-3. Authentication: DID (Decentralized Identifier)
-4. Database: MYSQL
+- Frontend: CSS/HTML
+- Backend: JavaScript/Deno
+- Authentication: DID (Decentralized Identifier)
+- Database: MYSQL

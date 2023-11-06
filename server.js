@@ -7,10 +7,10 @@ import { DIDAuth } from "https://jigintern.github.io/did-login/auth/DIDAuth.js";
 import { addDID, checkIfIdExists, getUser } from "./db-controller.js";
 
 const mySqlClient = await new Client().connect({
-  hostname: Deno.env.get("MYSQL_HOSTNAME"),
-  username: Deno.env.get("MYSQL_USER"),
-  password: Deno.env.get("MYSQL_PASSWORD"),
-  db: Deno.env.get("DATABASE"),
+  hostname: "localhost",
+  username: "root",
+  db: "kosenProjects",
+  password: "MKenm!44mt",
 });
 
 serve(async (req) => {
@@ -42,7 +42,7 @@ serve(async (req) => {
 
   if (req.method === "GET" && pathname === "/dream-content") {
     const dreams = await mySqlClient.query(
-      "SELECT content FROM dreams WHERE dream_id = 58"
+      "SELECT content FROM dreams WHERE dream_id = 200"
     );
     const content = dreams[0].content;
     return new Response(content);
@@ -77,18 +77,19 @@ serve(async (req) => {
    */
 
   if (req.method === "GET" && pathname === "/dreams") {
-    const dreams = await mySqlClient.query(
-      "SELECT * FROM dreams ORDER BY timestamp DESC LIMIT 20"
-    );
-    // titleとcontentの両方を含むオブジェクトの配列を作成
+    const dreams = await mySqlClient.query(`
+      SELECT dreams.title, dreams.content, dreams.dream_id, dreams.tag, users.name
+      FROM dreams
+      JOIN users ON dreams.did = users.did
+      ORDER BY dreams.timestamp DESC LIMIT 200
+    `);
     const result = dreams.map((dream) => ({
       title: dream.title,
       content: dream.content,
       dream_id: dream.dream_id,
       tag: dream.tag,
+      name: dream.name, // This is the username you want to display
     }));
-
-    // JSON形式でResponseを返す
     return new Response(JSON.stringify(result), {
       headers: { "Content-Type": "application/json" },
     });

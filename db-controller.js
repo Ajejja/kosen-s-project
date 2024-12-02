@@ -6,7 +6,7 @@ const connectionParam = {
   hostname: "localhost",
   username: "root",
   db: "kosenProjects",
-  password: "MKenm!44mt",
+  password: "********",
 };
 // クライアントの作成
 const client = await new Client().connect(connectionParam);

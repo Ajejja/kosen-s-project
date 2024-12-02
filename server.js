@@ -10,7 +10,7 @@ const mySqlClient = await new Client().connect({
   hostname: "localhost",
   username: "root",
   db: "kosenProjects",
-  password: "MKenm!44mt",
+  password: "********",
 });
 
 serve(async (req) => {
